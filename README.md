@@ -22,11 +22,20 @@ You can use the command below in cmd:
 This command reads the composer.json file and installs all the libraries and dependencies required for the project.
 
 ## Running the Project
+
+to use project data type:
+
+*php data/load_db.php*
+and after
+*composer dump-autoload*
+
 To start the development server, navigate to the project's public directory and use the following command:
 
 *php -S 0.0.0.0:8080 -t public public/router.php*
 
 You can see the application here: http://localhost:8080
+
+
 
 License
 This project is licensed under the MIT License - see the LICENSE.md file for details.
