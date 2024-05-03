@@ -38,8 +38,3 @@ To start the development server, navigate to the project's public directory and 
 *php -S 0.0.0.0:8080 -t public public/router.php*
 
 You can see the application here: http://localhost:8080
-
-
-
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
