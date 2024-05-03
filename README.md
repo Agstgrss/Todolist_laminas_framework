@@ -4,7 +4,7 @@ This is a project that creates a todolist where you can generate a new task, vie
 
 ## Prerequisites
 
-- **PHP** (version 7.4 or higher)
+- **PHP** (version 8.1 or higher)
 - **Composer**: The dependency manager for PHP
 
 
