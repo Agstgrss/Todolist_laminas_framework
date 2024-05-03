@@ -6,6 +6,8 @@ $date = new DateTime();
 
 $this->headTitle($title);
 ?>
+
+
 <h1><?= $this->escapeHtml($title) ?></h1>
 <p>
 
@@ -41,11 +43,13 @@ $this->headTitle($title);
             <?php } ?>  
 
             <?php
+
+
             if ($daysDifference>=5 && $task->statuss == 'Pending') {  ?>
                 <button onclick="window.location.href='<?= $this->url('task', ['action' => 'delete', 'id' => $task->id]) ?>'" class="btn btn-danger">Delete</button>
             <?php } ?>  
 
-            <button onclick="window.location.href='<?= $this->url('task', ['action' => 'status', 'id' => $task->id]) ?>'" class="btn btn-outline-primary">status</button>
+            <button onclick="window.location.href='<?= $this->url('task', ['action' => 'status', 'id' => $task->id]) ?>'" class="btn btn-outline-primary">Status</button>
 
             
                 
