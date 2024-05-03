@@ -16,11 +16,22 @@ In the directory where you want to download the repository, open Git Bash and us
 
 ## Installing Dependencies
 
-You can use the command below in cmd:
+To do this, is needed to enable some extensions in php.ini
+
+**php extension package**
+- **extension=intl
+- **extension=openssl
+- **extension=pdo_mysql
+- **extension=pdo_sqlite
+
+After this you can use the command below in directory using cmd:
 
 *composer install*
 
 This command reads the composer.json file and installs all the libraries and dependencies required for the project.
+if it is not enough, use:
+
+*composer update*
 
 ## Running the Project
 
@@ -38,3 +49,5 @@ To start the development server, navigate to the project's public directory and 
 *php -S 0.0.0.0:8080 -t public public/router.php*
 
 You can see the application here: http://localhost:8080
+
+
