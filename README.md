@@ -25,6 +25,7 @@ This command reads the composer.json file and installs all the libraries and dep
 To start the development server, navigate to the project's public directory and use the following command:
 
 *php -S 0.0.0.0:8080 -t public public/router.php*
+
 You can see the application here: http://localhost:8080
 
 License
