@@ -1,0 +1,56 @@
+<?php
+
+$title = 'My tasks';
+
+$date = new DateTime();
+
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<p>
+
+    <button onclick="window.location.href='<?= $this->url('task', ['action' => 'add']) ?>'" class="btn btn-success">Add new task</button>
+    
+</p>
+
+
+<table class="table">
+<tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Creation_date</th>
+    <th>Status</th>
+    <th>&nbsp;</th>
+</tr>
+<?php foreach ($tasks as $task) : ?>
+    
+    <?php $date2 = new DateTime($task->creation_date); 
+
+    $interval = $date->diff($date2);
+
+    $daysDifference = $interval->days;?>
+
+    <tr>
+        <td><?= $this->escapeHtml($task->title) ?></td>
+        <td><?= $this->escapeHtml($task->descriptionn) ?></td>
+        <td><?= $this->escapeHtml($task->creation_date) ?></td>
+        <td><?= $this->escapeHtml($task->statuss) ?></td>
+        <td>
+            <?php if ($task->statuss == 'Pending') { ?> 
+                <button onclick="window.location.href='<?= $this->url('task', ['action' => 'edit', 'id' => $task->id]) ?>'" class="btn btn-success">Edit</button>
+            <?php } ?>  
+
+            <?php
+            if ($daysDifference>=5 && $task->statuss == 'Pending') {  ?>
+                <button onclick="window.location.href='<?= $this->url('task', ['action' => 'delete', 'id' => $task->id]) ?>'" class="btn btn-danger">Delete</button>
+            <?php } ?>  
+
+            <button onclick="window.location.href='<?= $this->url('task', ['action' => 'status', 'id' => $task->id]) ?>'" class="btn btn-outline-primary">status</button>
+
+            
+                
+
+        </td>
+    </tr>
+<?php endforeach; ?>
+</table>
